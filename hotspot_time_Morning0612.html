@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_29dc505dc3af2f4f6b4d5e8bf943bb85 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_29dc505dc3af2f4f6b4d5e8bf943bb85" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_29dc505dc3af2f4f6b4d5e8bf943bb85 = L.map(
+                "map_29dc505dc3af2f4f6b4d5e8bf943bb85",
+                {
+                    center: [29.463086419753083, 77.14533950617283],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_553ec0eb7502e287288c024983b764e6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_553ec0eb7502e287288c024983b764e6.addTo(map_29dc505dc3af2f4f6b4d5e8bf943bb85);
+        
+    
+            var heat_map_8e821db1bd9a68a37737e5f2dd06795e = L.heatLayer(
+                [[29.537222222222223, 77.12166666666666], [29.285, 77.045], [29.33944444444444, 77.085], [29.500555555555557, 77.17444444444445], [29.444166666666668, 77.21388888888889], [29.523888888888887, 77.17166666666667], [29.426666666666662, 77.21722222222222], [29.567222222222224, 77.16000000000001], [29.54361111111111, 77.11916666666666]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 25,
+  "blur": 15,
+}
+            );
+        
+    
+            heat_map_8e821db1bd9a68a37737e5f2dd06795e.addTo(map_29dc505dc3af2f4f6b4d5e8bf943bb85);
+        
+    
+            var marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_493d70529a39a88617fe125bee5a8776 = L.marker(
+                [29.537222222222223, 77.12166666666666],
+                {
+}
+            ).addTo(marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6);
+        
+    
+        var popup_456676299cdad38f0a00dfcfd2bdef73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1507571f2225cf6555acdbda9f3fcf9a = $(`<div id="html_1507571f2225cf6555acdbda9f3fcf9a" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 11.00 AM<br><b>Loc:</b> NEAR VILL SHIMLA GUJRAN </div>`)[0];
+                popup_456676299cdad38f0a00dfcfd2bdef73.setContent(html_1507571f2225cf6555acdbda9f3fcf9a);
+            
+        
+
+        marker_493d70529a39a88617fe125bee5a8776.bindPopup(popup_456676299cdad38f0a00dfcfd2bdef73)
+        ;
+
+        
+    
+    
+            var marker_0dcd2a0aa5cd1d3ba9bd44eeb5a5c89b = L.marker(
+                [29.285, 77.045],
+                {
+}
+            ).addTo(marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6);
+        
+    
+        var popup_0e9f78a77174edfc355eecf405d9ecb1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_29392c426ac9213da045a78b1ed09200 = $(`<div id="html_29392c426ac9213da045a78b1ed09200" style="width: 100.0%; height: 100.0%;"><b>Head:</b> HURT<br><b>Time:</b> 09.00 AM<br><b>Loc:</b> VILL BEHOLI</div>`)[0];
+                popup_0e9f78a77174edfc355eecf405d9ecb1.setContent(html_29392c426ac9213da045a78b1ed09200);
+            
+        
+
+        marker_0dcd2a0aa5cd1d3ba9bd44eeb5a5c89b.bindPopup(popup_0e9f78a77174edfc355eecf405d9ecb1)
+        ;
+
+        
+    
+    
+            var marker_1d21ef64d7e41209c2d5ec3a115838d4 = L.marker(
+                [29.33944444444444, 77.085],
+                {
+}
+            ).addTo(marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6);
+        
+    
+        var popup_385fdc28b987968b0a50f4016f93aef0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4ec30b7f2bf4d3da4baf9cfd5dbd0c7a = $(`<div id="html_4ec30b7f2bf4d3da4baf9cfd5dbd0c7a" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 10.00 AM<br><b>Loc:</b> VILL BAPOLI </div>`)[0];
+                popup_385fdc28b987968b0a50f4016f93aef0.setContent(html_4ec30b7f2bf4d3da4baf9cfd5dbd0c7a);
+            
+        
+
+        marker_1d21ef64d7e41209c2d5ec3a115838d4.bindPopup(popup_385fdc28b987968b0a50f4016f93aef0)
+        ;
+
+        
+    
+    
+            var marker_c6819c36ad6f6ebdb5e4baa59555784b = L.marker(
+                [29.500555555555557, 77.17444444444445],
+                {
+}
+            ).addTo(marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6);
+        
+    
+        var popup_689d0129c41e67ac4f0de214a262cc87 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f4aafde580d43542266de3c4acfcd122 = $(`<div id="html_f4aafde580d43542266de3c4acfcd122" style="width: 100.0%; height: 100.0%;"><b>Head:</b> HURT<br><b>Time:</b> 09.00 AM<br><b>Loc:</b> VILL SANJOLI </div>`)[0];
+                popup_689d0129c41e67ac4f0de214a262cc87.setContent(html_f4aafde580d43542266de3c4acfcd122);
+            
+        
+
+        marker_c6819c36ad6f6ebdb5e4baa59555784b.bindPopup(popup_689d0129c41e67ac4f0de214a262cc87)
+        ;
+
+        
+    
+    
+            var marker_94adca20d1ce5802f472c58f447273ac = L.marker(
+                [29.444166666666668, 77.21388888888889],
+                {
+}
+            ).addTo(marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6);
+        
+    
+        var popup_b67da22e85ec0028dceb42faa47151b2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_caea60bf2ace537d5347656b3566f640 = $(`<div id="html_caea60bf2ace537d5347656b3566f640" style="width: 100.0%; height: 100.0%;"><b>Head:</b> HURT<br><b>Time:</b> 07.30 AM<br><b>Loc:</b> VILL KHOJKIPUR-KHURD YAMUNA BANDH </div>`)[0];
+                popup_b67da22e85ec0028dceb42faa47151b2.setContent(html_caea60bf2ace537d5347656b3566f640);
+            
+        
+
+        marker_94adca20d1ce5802f472c58f447273ac.bindPopup(popup_b67da22e85ec0028dceb42faa47151b2)
+        ;
+
+        
+    
+    
+            var marker_6af9f4d737e2d44603c1f0aeb6d7df9d = L.marker(
+                [29.523888888888887, 77.17166666666667],
+                {
+}
+            ).addTo(marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6);
+        
+    
+        var popup_31cd490319478d1effc6aa7c432f4b0b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6119f2c4da3b5775736c4d526a476e0 = $(`<div id="html_d6119f2c4da3b5775736c4d526a476e0" style="width: 100.0%; height: 100.0%;"><b>Head:</b> HURT<br><b>Time:</b> 09.30 AM<br><b>Loc:</b> VILL BHALOR FIELD</div>`)[0];
+                popup_31cd490319478d1effc6aa7c432f4b0b.setContent(html_d6119f2c4da3b5775736c4d526a476e0);
+            
+        
+
+        marker_6af9f4d737e2d44603c1f0aeb6d7df9d.bindPopup(popup_31cd490319478d1effc6aa7c432f4b0b)
+        ;
+
+        
+    
+    
+            var marker_d8d26ca74115b68966337fff060da3d2 = L.marker(
+                [29.426666666666662, 77.21722222222222],
+                {
+}
+            ).addTo(marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6);
+        
+    
+        var popup_c501238e9965f9c6fda0a88994cc682b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31e6b5f5480d687496bf66b51055cb19 = $(`<div id="html_31e6b5f5480d687496bf66b51055cb19" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 11.30 AM<br><b>Loc:</b> VILL KHOJKIPUR-KHURD YAMUNA PUL</div>`)[0];
+                popup_c501238e9965f9c6fda0a88994cc682b.setContent(html_31e6b5f5480d687496bf66b51055cb19);
+            
+        
+
+        marker_d8d26ca74115b68966337fff060da3d2.bindPopup(popup_c501238e9965f9c6fda0a88994cc682b)
+        ;
+
+        
+    
+    
+            var marker_70db8484671eceede5a374ca1fe51b84 = L.marker(
+                [29.567222222222224, 77.16000000000001],
+                {
+}
+            ).addTo(marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6);
+        
+    
+        var popup_69effa230a99455b2b81f8840aff8824 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6adc86d3f7bd793f2d3025de07544760 = $(`<div id="html_6adc86d3f7bd793f2d3025de07544760" style="width: 100.0%; height: 100.0%;"><b>Head:</b> VEHICLE THEFT<br><b>Time:</b> 08.30 AM<br><b>Loc:</b> VILL BAPOLI STAND </div>`)[0];
+                popup_69effa230a99455b2b81f8840aff8824.setContent(html_6adc86d3f7bd793f2d3025de07544760);
+            
+        
+
+        marker_70db8484671eceede5a374ca1fe51b84.bindPopup(popup_69effa230a99455b2b81f8840aff8824)
+        ;
+
+        
+    
+    
+            var marker_8e70a8dccce207a8509185a623eb0f93 = L.marker(
+                [29.54361111111111, 77.11916666666666],
+                {
+}
+            ).addTo(marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6);
+        
+    
+        var popup_464922093dd6864ad226c76858d6c712 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e5b04c00599cef17daab289fa3540b61 = $(`<div id="html_e5b04c00599cef17daab289fa3540b61" style="width: 100.0%; height: 100.0%;"><b>Head:</b> VEHICLE THEFT<br><b>Time:</b> 10.30 AM<br><b>Loc:</b> VILL SHIMLA GUJRAN </div>`)[0];
+                popup_464922093dd6864ad226c76858d6c712.setContent(html_e5b04c00599cef17daab289fa3540b61);
+            
+        
+
+        marker_8e70a8dccce207a8509185a623eb0f93.bindPopup(popup_464922093dd6864ad226c76858d6c712)
+        ;
+
+        
+    
+    
+            marker_cluster_5bd6ec731da2f8a2d3119f285e10a4a6.addTo(map_29dc505dc3af2f4f6b4d5e8bf943bb85);
+        
+</script>
+</html>

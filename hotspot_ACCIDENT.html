@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7f6ecc32ea5aacd183f7bb4ccd065460 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7f6ecc32ea5aacd183f7bb4ccd065460" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7f6ecc32ea5aacd183f7bb4ccd065460 = L.map(
+                "map_7f6ecc32ea5aacd183f7bb4ccd065460",
+                {
+                    center: [29.465701754385965, 77.16989766081872],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_08e3650e38d5ea06209a65bb5d90d140 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_08e3650e38d5ea06209a65bb5d90d140.addTo(map_7f6ecc32ea5aacd183f7bb4ccd065460);
+        
+    
+            var heat_map_d7421bf147397b35daa4793e9d05f945 = L.heatLayer(
+                [[29.34722222222222, 77.07388888888889], [29.31861111111111, 77.06638888888888], [29.523333333333333, 77.17777777777778], [29.539444444444445, 77.12694444444443], [29.537222222222223, 77.12166666666666], [29.33944444444444, 77.085], [29.586388888888887, 77.15861111111111], [29.34722222222222, 77.07388888888889], [29.35944444444445, 77.05777777777777], [29.447777777777777, 77.16722222222222], [29.593888888888888, 77.1275], [29.56861111111111, 77.15972222222223], [29.2525, 78.06694444444445], [29.59777777777777, 77.11194444444443], [29.573611111111116, 77.1211111111111], [29.54555555555556, 77.14111111111112], [29.466944444444444, 77.08722222222222], [29.426666666666662, 77.21722222222222], [29.476666666666667, 77.08611111111111]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 25,
+  "blur": 15,
+}
+            );
+        
+    
+            heat_map_d7421bf147397b35daa4793e9d05f945.addTo(map_7f6ecc32ea5aacd183f7bb4ccd065460);
+        
+    
+            var marker_cluster_7d4c2f9a99160d4f8b11009068b7d652 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_8164dc6cfb539de6e60c367344efcef3 = L.marker(
+                [29.34722222222222, 77.07388888888889],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_e5048b2d9da5182472be514743d1c84f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31b55fdf2be19d615b756bfc615734ce = $(`<div id="html_31b55fdf2be19d615b756bfc615734ce" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 07.00 PM<br><b>Loc:</b> NEAR VILL BEHRAMPUR GATE </div>`)[0];
+                popup_e5048b2d9da5182472be514743d1c84f.setContent(html_31b55fdf2be19d615b756bfc615734ce);
+            
+        
+
+        marker_8164dc6cfb539de6e60c367344efcef3.bindPopup(popup_e5048b2d9da5182472be514743d1c84f)
+        ;
+
+        
+    
+    
+            var marker_f01f19d4f2d45015809e5a040107bff9 = L.marker(
+                [29.31861111111111, 77.06638888888888],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_af27f5746070a702c344118d2c4cf5da = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ca6971d05e32e418a4a3050df306a0cd = $(`<div id="html_ca6971d05e32e418a4a3050df306a0cd" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 08.20 PM<br><b>Loc:</b> NEAR VILL SHIMLA GUJRAN </div>`)[0];
+                popup_af27f5746070a702c344118d2c4cf5da.setContent(html_ca6971d05e32e418a4a3050df306a0cd);
+            
+        
+
+        marker_f01f19d4f2d45015809e5a040107bff9.bindPopup(popup_af27f5746070a702c344118d2c4cf5da)
+        ;
+
+        
+    
+    
+            var marker_55b83442b6e18a593ba45e5b20e640f0 = L.marker(
+                [29.523333333333333, 77.17777777777778],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_86e2691dbff0e0bbd13f08479ae08c68 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f84658d756f1f0e82a9b8692d308eba2 = $(`<div id="html_f84658d756f1f0e82a9b8692d308eba2" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 07.05 PM<br><b>Loc:</b> VILL BHALOR </div>`)[0];
+                popup_86e2691dbff0e0bbd13f08479ae08c68.setContent(html_f84658d756f1f0e82a9b8692d308eba2);
+            
+        
+
+        marker_55b83442b6e18a593ba45e5b20e640f0.bindPopup(popup_86e2691dbff0e0bbd13f08479ae08c68)
+        ;
+
+        
+    
+    
+            var marker_7a08660e3a73a3f91992b219a060664c = L.marker(
+                [29.539444444444445, 77.12694444444443],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_2289945a71d19cd4c3c53694be9040cf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_589ac1b4ab414829baa0a30cdbfade95 = $(`<div id="html_589ac1b4ab414829baa0a30cdbfade95" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 04.30 PM<br><b>Loc:</b> NEAR VILL SHIMLA GUJRAN </div>`)[0];
+                popup_2289945a71d19cd4c3c53694be9040cf.setContent(html_589ac1b4ab414829baa0a30cdbfade95);
+            
+        
+
+        marker_7a08660e3a73a3f91992b219a060664c.bindPopup(popup_2289945a71d19cd4c3c53694be9040cf)
+        ;
+
+        
+    
+    
+            var marker_0bd9f0eda5145773ceb251f6ceb2c8fc = L.marker(
+                [29.537222222222223, 77.12166666666666],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_460ac3b1297c5bb51f334248faa98e6c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f998c8f452f7a719d8a2a67e03015d9 = $(`<div id="html_5f998c8f452f7a719d8a2a67e03015d9" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 11.00 AM<br><b>Loc:</b> NEAR VILL SHIMLA GUJRAN </div>`)[0];
+                popup_460ac3b1297c5bb51f334248faa98e6c.setContent(html_5f998c8f452f7a719d8a2a67e03015d9);
+            
+        
+
+        marker_0bd9f0eda5145773ceb251f6ceb2c8fc.bindPopup(popup_460ac3b1297c5bb51f334248faa98e6c)
+        ;
+
+        
+    
+    
+            var marker_319b1741ea4a8751ebb623a2c1edc58e = L.marker(
+                [29.33944444444444, 77.085],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_4dc35e32970af7e865a21f2947d57ce1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c4c61f0a10f238925ff6fef6d6d3743 = $(`<div id="html_0c4c61f0a10f238925ff6fef6d6d3743" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 10.00 AM<br><b>Loc:</b> VILL BAPOLI </div>`)[0];
+                popup_4dc35e32970af7e865a21f2947d57ce1.setContent(html_0c4c61f0a10f238925ff6fef6d6d3743);
+            
+        
+
+        marker_319b1741ea4a8751ebb623a2c1edc58e.bindPopup(popup_4dc35e32970af7e865a21f2947d57ce1)
+        ;
+
+        
+    
+    
+            var marker_9f60543476e91665dc41b6dd93c93455 = L.marker(
+                [29.586388888888887, 77.15861111111111],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_79bd3bc066d7a7590ae6049210c26e56 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96d26062d9199b80485bbdfd960cb65e = $(`<div id="html_96d26062d9199b80485bbdfd960cb65e" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 08.00 PM<br><b>Loc:</b> VILLBAPOLI JALMANA GATE </div>`)[0];
+                popup_79bd3bc066d7a7590ae6049210c26e56.setContent(html_96d26062d9199b80485bbdfd960cb65e);
+            
+        
+
+        marker_9f60543476e91665dc41b6dd93c93455.bindPopup(popup_79bd3bc066d7a7590ae6049210c26e56)
+        ;
+
+        
+    
+    
+            var marker_987c96d2a76ca54fc00147d57df10702 = L.marker(
+                [29.34722222222222, 77.07388888888889],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_1339e86a2ceb60100a1f076226006f61 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e51ad014b05eb5a04392a9579c8c21c0 = $(`<div id="html_e51ad014b05eb5a04392a9579c8c21c0" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 04.00 PM<br><b>Loc:</b> VILL BEHRAMPUR GATE </div>`)[0];
+                popup_1339e86a2ceb60100a1f076226006f61.setContent(html_e51ad014b05eb5a04392a9579c8c21c0);
+            
+        
+
+        marker_987c96d2a76ca54fc00147d57df10702.bindPopup(popup_1339e86a2ceb60100a1f076226006f61)
+        ;
+
+        
+    
+    
+            var marker_e30bf2fd47f03841ce91d1ff9645ff52 = L.marker(
+                [29.35944444444445, 77.05777777777777],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_646559ee4fa441614d6f46d6ef19c1b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_859c3f20cc84f1ad3464f1a32a3a5680 = $(`<div id="html_859c3f20cc84f1ad3464f1a32a3a5680" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 08.30 PM<br><b>Loc:</b> VILL RASLAPUR </div>`)[0];
+                popup_646559ee4fa441614d6f46d6ef19c1b8.setContent(html_859c3f20cc84f1ad3464f1a32a3a5680);
+            
+        
+
+        marker_e30bf2fd47f03841ce91d1ff9645ff52.bindPopup(popup_646559ee4fa441614d6f46d6ef19c1b8)
+        ;
+
+        
+    
+    
+            var marker_a75008ff235e7db9a7e69e331f468512 = L.marker(
+                [29.447777777777777, 77.16722222222222],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_473d7d7f7622d774ed88f0bb766bfa5a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_616656c4cddaf957bb8a87a71bb404ed = $(`<div id="html_616656c4cddaf957bb8a87a71bb404ed" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 04.00 PM<br><b>Loc:</b> VILL MATROLI  </div>`)[0];
+                popup_473d7d7f7622d774ed88f0bb766bfa5a.setContent(html_616656c4cddaf957bb8a87a71bb404ed);
+            
+        
+
+        marker_a75008ff235e7db9a7e69e331f468512.bindPopup(popup_473d7d7f7622d774ed88f0bb766bfa5a)
+        ;
+
+        
+    
+    
+            var marker_a8a2e66c47e4e93b0eb75565ceb4d5cd = L.marker(
+                [29.593888888888888, 77.1275],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_fd529e1b2a85ebea6976de01f0f9f435 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6efee5906ea4b1b0fc668457870f404b = $(`<div id="html_6efee5906ea4b1b0fc668457870f404b" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 10.30 PM<br><b>Loc:</b> VILL BEHRAMPUR </div>`)[0];
+                popup_fd529e1b2a85ebea6976de01f0f9f435.setContent(html_6efee5906ea4b1b0fc668457870f404b);
+            
+        
+
+        marker_a8a2e66c47e4e93b0eb75565ceb4d5cd.bindPopup(popup_fd529e1b2a85ebea6976de01f0f9f435)
+        ;
+
+        
+    
+    
+            var marker_03bcca4db4dd55e8e3d3d658f8f53553 = L.marker(
+                [29.56861111111111, 77.15972222222223],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_c8fcc969e2e7b34aeef67da7a36cefc4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc26ea1b377dc19d18ab75a07e181495 = $(`<div id="html_cc26ea1b377dc19d18ab75a07e181495" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 12.00 PM<br><b>Loc:</b> VILL BAPOLI </div>`)[0];
+                popup_c8fcc969e2e7b34aeef67da7a36cefc4.setContent(html_cc26ea1b377dc19d18ab75a07e181495);
+            
+        
+
+        marker_03bcca4db4dd55e8e3d3d658f8f53553.bindPopup(popup_c8fcc969e2e7b34aeef67da7a36cefc4)
+        ;
+
+        
+    
+    
+            var marker_9848fc1ceec449c1e2ffff251677e238 = L.marker(
+                [29.2525, 78.06694444444445],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_5f280c9c7d9c8cdc90940bc36ff2c5e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7093baf6b6179d5b93cd515c37327888 = $(`<div id="html_7093baf6b6179d5b93cd515c37327888" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 10.30 PM<br><b>Loc:</b> VILL KHOJKIPUR </div>`)[0];
+                popup_5f280c9c7d9c8cdc90940bc36ff2c5e8.setContent(html_7093baf6b6179d5b93cd515c37327888);
+            
+        
+
+        marker_9848fc1ceec449c1e2ffff251677e238.bindPopup(popup_5f280c9c7d9c8cdc90940bc36ff2c5e8)
+        ;
+
+        
+    
+    
+            var marker_2b06d724bc233d3da2e3d429ca204367 = L.marker(
+                [29.59777777777777, 77.11194444444443],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_effbcce13c682807f6d182155faa422d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70af2e0c42c3cdb60c9505ef0486b15d = $(`<div id="html_70af2e0c42c3cdb60c9505ef0486b15d" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 10.00 PM<br><b>Loc:</b> VILL BEHRAMPUR GATE </div>`)[0];
+                popup_effbcce13c682807f6d182155faa422d.setContent(html_70af2e0c42c3cdb60c9505ef0486b15d);
+            
+        
+
+        marker_2b06d724bc233d3da2e3d429ca204367.bindPopup(popup_effbcce13c682807f6d182155faa422d)
+        ;
+
+        
+    
+    
+            var marker_55d61f581602e100f30214f1b5076cb8 = L.marker(
+                [29.573611111111116, 77.1211111111111],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_a75033a8fdb14bd503eb9ed275e9635a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b5ce3c3ab669b74615aa0c60a381b33f = $(`<div id="html_b5ce3c3ab669b74615aa0c60a381b33f" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 08.00 PM<br><b>Loc:</b> VILL BEHRAMPUR GATE </div>`)[0];
+                popup_a75033a8fdb14bd503eb9ed275e9635a.setContent(html_b5ce3c3ab669b74615aa0c60a381b33f);
+            
+        
+
+        marker_55d61f581602e100f30214f1b5076cb8.bindPopup(popup_a75033a8fdb14bd503eb9ed275e9635a)
+        ;
+
+        
+    
+    
+            var marker_a7f4e188eaf586806c5bab50df6ac346 = L.marker(
+                [29.54555555555556, 77.14111111111112],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_cad2cd5eee0a33cc73a4338a6c884933 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad49aed39cfcf4cfbf545dfc3a2d814d = $(`<div id="html_ad49aed39cfcf4cfbf545dfc3a2d814d" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 04.30 PM<br><b>Loc:</b> VILL BAPOLI</div>`)[0];
+                popup_cad2cd5eee0a33cc73a4338a6c884933.setContent(html_ad49aed39cfcf4cfbf545dfc3a2d814d);
+            
+        
+
+        marker_a7f4e188eaf586806c5bab50df6ac346.bindPopup(popup_cad2cd5eee0a33cc73a4338a6c884933)
+        ;
+
+        
+    
+    
+            var marker_5b1e7989f5ce9f9ca96da7ba9b9874f8 = L.marker(
+                [29.466944444444444, 77.08722222222222],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_8d181a3b6717443684c568a50c3f917d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5293708a9080a4d5f3cd6641ff87e381 = $(`<div id="html_5293708a9080a4d5f3cd6641ff87e381" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 06.00 PM<br><b>Loc:</b> VILL SAHARMALPUR </div>`)[0];
+                popup_8d181a3b6717443684c568a50c3f917d.setContent(html_5293708a9080a4d5f3cd6641ff87e381);
+            
+        
+
+        marker_5b1e7989f5ce9f9ca96da7ba9b9874f8.bindPopup(popup_8d181a3b6717443684c568a50c3f917d)
+        ;
+
+        
+    
+    
+            var marker_5109f7853d4b59c9cfd9e9b16434f68b = L.marker(
+                [29.426666666666662, 77.21722222222222],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_3272d35fe8114bf06b937f1282a0660f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c59ab16cb15c86cda4cf78a5db348ab8 = $(`<div id="html_c59ab16cb15c86cda4cf78a5db348ab8" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 11.30 AM<br><b>Loc:</b> VILL KHOJKIPUR-KHURD YAMUNA PUL</div>`)[0];
+                popup_3272d35fe8114bf06b937f1282a0660f.setContent(html_c59ab16cb15c86cda4cf78a5db348ab8);
+            
+        
+
+        marker_5109f7853d4b59c9cfd9e9b16434f68b.bindPopup(popup_3272d35fe8114bf06b937f1282a0660f)
+        ;
+
+        
+    
+    
+            var marker_15addd9c7a6c226f93baa49f164d8711 = L.marker(
+                [29.476666666666667, 77.08611111111111],
+                {
+}
+            ).addTo(marker_cluster_7d4c2f9a99160d4f8b11009068b7d652);
+        
+    
+        var popup_ef48abf965d4752d2699d00754f1bc80 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a27ab16dd56813e171cb37c41e8ff70d = $(`<div id="html_a27ab16dd56813e171cb37c41e8ff70d" style="width: 100.0%; height: 100.0%;"><b>Head:</b> ACCIDENT<br><b>Time:</b> 04.00 PM<br><b>Loc:</b> VILL SAHARMALPUR </div>`)[0];
+                popup_ef48abf965d4752d2699d00754f1bc80.setContent(html_a27ab16dd56813e171cb37c41e8ff70d);
+            
+        
+
+        marker_15addd9c7a6c226f93baa49f164d8711.bindPopup(popup_ef48abf965d4752d2699d00754f1bc80)
+        ;
+
+        
+    
+    
+            marker_cluster_7d4c2f9a99160d4f8b11009068b7d652.addTo(map_7f6ecc32ea5aacd183f7bb4ccd065460);
+        
+</script>
+</html>

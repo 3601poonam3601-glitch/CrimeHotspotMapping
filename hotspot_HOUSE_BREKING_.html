@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7b9e3725b6bc4027e8f4293f1d0f05b5 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7b9e3725b6bc4027e8f4293f1d0f05b5" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7b9e3725b6bc4027e8f4293f1d0f05b5 = L.map(
+                "map_7b9e3725b6bc4027e8f4293f1d0f05b5",
+                {
+                    center: [29.497666666666667, 77.11561111111111],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_aa4260cdd167dd4f6e885979ae7aaaad = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_aa4260cdd167dd4f6e885979ae7aaaad.addTo(map_7b9e3725b6bc4027e8f4293f1d0f05b5);
+        
+    
+            var heat_map_613ef39629e718c5085b46c31a1994cc = L.heatLayer(
+                [[29.572777777777777, 77.12555555555555], [29.49361111111111, 77.0736111111111], [29.500833333333333, 77.14694444444446], [29.58055555555556, 77.14611111111111], [29.340555555555557, 77.08583333333333]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 25,
+  "blur": 15,
+}
+            );
+        
+    
+            heat_map_613ef39629e718c5085b46c31a1994cc.addTo(map_7b9e3725b6bc4027e8f4293f1d0f05b5);
+        
+    
+            var marker_cluster_e4cadd003485900840935abc95ffe41e = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_1c5caa0b18b09bc4086bfd02dc9603f9 = L.marker(
+                [29.572777777777777, 77.12555555555555],
+                {
+}
+            ).addTo(marker_cluster_e4cadd003485900840935abc95ffe41e);
+        
+    
+        var popup_f8a1882e40941833558d8261a3a48671 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f11f0a47b18049d625fa5a031056acf = $(`<div id="html_4f11f0a47b18049d625fa5a031056acf" style="width: 100.0%; height: 100.0%;"><b>Head:</b> HOUSE BREKING <br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL BEHRAMPUR </div>`)[0];
+                popup_f8a1882e40941833558d8261a3a48671.setContent(html_4f11f0a47b18049d625fa5a031056acf);
+            
+        
+
+        marker_1c5caa0b18b09bc4086bfd02dc9603f9.bindPopup(popup_f8a1882e40941833558d8261a3a48671)
+        ;
+
+        
+    
+    
+            var marker_614488fa9715e2264cc58f5fc55ab747 = L.marker(
+                [29.49361111111111, 77.0736111111111],
+                {
+}
+            ).addTo(marker_cluster_e4cadd003485900840935abc95ffe41e);
+        
+    
+        var popup_69f0deaca907495cea1cd906d15a4156 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3801fe88ef86ed1c0c5505846b7e7ed4 = $(`<div id="html_3801fe88ef86ed1c0c5505846b7e7ed4" style="width: 100.0%; height: 100.0%;"><b>Head:</b> HOUSE BREKING <br><b>Time:</b> 02.00 AM<br><b>Loc:</b> VILL BEHOLI  </div>`)[0];
+                popup_69f0deaca907495cea1cd906d15a4156.setContent(html_3801fe88ef86ed1c0c5505846b7e7ed4);
+            
+        
+
+        marker_614488fa9715e2264cc58f5fc55ab747.bindPopup(popup_69f0deaca907495cea1cd906d15a4156)
+        ;
+
+        
+    
+    
+            var marker_954a3bef982e7af52137a4435e394703 = L.marker(
+                [29.500833333333333, 77.14694444444446],
+                {
+}
+            ).addTo(marker_cluster_e4cadd003485900840935abc95ffe41e);
+        
+    
+        var popup_445c30a02a5cd13bd13320c5d62ab88e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_246e06c596f08508a047b46ef945f76a = $(`<div id="html_246e06c596f08508a047b46ef945f76a" style="width: 100.0%; height: 100.0%;"><b>Head:</b> HOUSE BREKING <br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL GARHI BHALOR </div>`)[0];
+                popup_445c30a02a5cd13bd13320c5d62ab88e.setContent(html_246e06c596f08508a047b46ef945f76a);
+            
+        
+
+        marker_954a3bef982e7af52137a4435e394703.bindPopup(popup_445c30a02a5cd13bd13320c5d62ab88e)
+        ;
+
+        
+    
+    
+            var marker_78d54a9366ef7d8d9f0bb5980db5f670 = L.marker(
+                [29.58055555555556, 77.14611111111111],
+                {
+}
+            ).addTo(marker_cluster_e4cadd003485900840935abc95ffe41e);
+        
+    
+        var popup_b2615ce715873635645e9f9ba3f468c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_419091ba71bd127bf7c6f9004e62e97d = $(`<div id="html_419091ba71bd127bf7c6f9004e62e97d" style="width: 100.0%; height: 100.0%;"><b>Head:</b> HOUSE BREKING <br><b>Time:</b> 01.30 AM<br><b>Loc:</b> VILL BAPOLI </div>`)[0];
+                popup_b2615ce715873635645e9f9ba3f468c5.setContent(html_419091ba71bd127bf7c6f9004e62e97d);
+            
+        
+
+        marker_78d54a9366ef7d8d9f0bb5980db5f670.bindPopup(popup_b2615ce715873635645e9f9ba3f468c5)
+        ;
+
+        
+    
+    
+            var marker_1ee927d43592e094b69dfaf8bf27dc74 = L.marker(
+                [29.340555555555557, 77.08583333333333],
+                {
+}
+            ).addTo(marker_cluster_e4cadd003485900840935abc95ffe41e);
+        
+    
+        var popup_53c974aa3c2a423cca2ca76046bbd55a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d88dbbc0a288c119a32ad828cda17c70 = $(`<div id="html_d88dbbc0a288c119a32ad828cda17c70" style="width: 100.0%; height: 100.0%;"><b>Head:</b> HOUSE BREKING <br><b>Time:</b> 01.15 AM<br><b>Loc:</b> SANOLI ROAD VILL BAPOLI </div>`)[0];
+                popup_53c974aa3c2a423cca2ca76046bbd55a.setContent(html_d88dbbc0a288c119a32ad828cda17c70);
+            
+        
+
+        marker_1ee927d43592e094b69dfaf8bf27dc74.bindPopup(popup_53c974aa3c2a423cca2ca76046bbd55a)
+        ;
+
+        
+    
+    
+            marker_cluster_e4cadd003485900840935abc95ffe41e.addTo(map_7b9e3725b6bc4027e8f4293f1d0f05b5);
+        
+</script>
+</html>

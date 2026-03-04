@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9bcf4f4165516ea8a4d9e48bebebad08 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9bcf4f4165516ea8a4d9e48bebebad08" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9bcf4f4165516ea8a4d9e48bebebad08 = L.map(
+                "map_9bcf4f4165516ea8a4d9e48bebebad08",
+                {
+                    center: [29.460212418300657, 77.13269607843137],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_436f6ef6a03ed48b32d18d1fcfbb895e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_436f6ef6a03ed48b32d18d1fcfbb895e.addTo(map_9bcf4f4165516ea8a4d9e48bebebad08);
+        
+    
+            var heat_map_79c2b17980b00c09ca955019c0a14c19 = L.heatLayer(
+                [[29.252777777777776, 77.11388888888888], [29.530555555555555, 77.115], [29.514166666666668, 77.09888888888888], [29.561666666666667, 77.11527777777778], [29.50166666666667, 77.12055555555555], [29.31722222222222, 77.07444444444444], [29.265833333333333, 77.10249999999999], [29.44611111111111, 77.18333333333334], [29.572222222222223, 77.14916666666667], [29.283611111111117, 77.235], [29.572222222222223, 77.14472222222223], [29.474166666666665, 77.0936111111111], [29.52083333333333, 77.13555555555556], [29.51333333333333, 77.11972222222222], [29.534166666666664, 77.17611111111111], [29.49138888888889, 77.07972222222222], [29.471666666666668, 77.19833333333334]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 18,
+  "radius": 25,
+  "blur": 15,
+}
+            );
+        
+    
+            heat_map_79c2b17980b00c09ca955019c0a14c19.addTo(map_9bcf4f4165516ea8a4d9e48bebebad08);
+        
+    
+            var marker_cluster_d60ccc0c4154692c57282a35b167991d = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_c4d8003fc74082ed07cce95be840d3ba = L.marker(
+                [29.252777777777776, 77.11388888888888],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_4b18e450a7026e05da85c0a9833203d4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b129590625e418347a50b7f54c4e6536 = $(`<div id="html_b129590625e418347a50b7f54c4e6536" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> 03.00 PM<br><b>Loc:</b> VILL BHANOLI </div>`)[0];
+                popup_4b18e450a7026e05da85c0a9833203d4.setContent(html_b129590625e418347a50b7f54c4e6536);
+            
+        
+
+        marker_c4d8003fc74082ed07cce95be840d3ba.bindPopup(popup_4b18e450a7026e05da85c0a9833203d4)
+        ;
+
+        
+    
+    
+            var marker_5b67bcb8f5e07d43ca259733ffd65360 = L.marker(
+                [29.530555555555555, 77.115],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_12ae260316a2a0ccc261b84aec47aa91 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef301cace8329883cdb0a6e823a1c875 = $(`<div id="html_ef301cace8329883cdb0a6e823a1c875" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> NEAR VILL SHIMLA GUJRAN </div>`)[0];
+                popup_12ae260316a2a0ccc261b84aec47aa91.setContent(html_ef301cace8329883cdb0a6e823a1c875);
+            
+        
+
+        marker_5b67bcb8f5e07d43ca259733ffd65360.bindPopup(popup_12ae260316a2a0ccc261b84aec47aa91)
+        ;
+
+        
+    
+    
+            var marker_1a02a05d6bd1128e6c1ecc1305f1b722 = L.marker(
+                [29.514166666666668, 77.09888888888888],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_733b9d1746b5e93673ace0a7c1b3fabc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a23555af757ecd784ebf44aca3f3d8d = $(`<div id="html_3a23555af757ecd784ebf44aca3f3d8d" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL BEHOLI FIELD </div>`)[0];
+                popup_733b9d1746b5e93673ace0a7c1b3fabc.setContent(html_3a23555af757ecd784ebf44aca3f3d8d);
+            
+        
+
+        marker_1a02a05d6bd1128e6c1ecc1305f1b722.bindPopup(popup_733b9d1746b5e93673ace0a7c1b3fabc)
+        ;
+
+        
+    
+    
+            var marker_335baf10f839cfa25806c74b576e36eb = L.marker(
+                [29.561666666666667, 77.11527777777778],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_678afdf0e9bfb921df7780885435c952 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04476177efb4e4a2bb5c0cb7547c2462 = $(`<div id="html_04476177efb4e4a2bb5c0cb7547c2462" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL BAPOLI FIELD </div>`)[0];
+                popup_678afdf0e9bfb921df7780885435c952.setContent(html_04476177efb4e4a2bb5c0cb7547c2462);
+            
+        
+
+        marker_335baf10f839cfa25806c74b576e36eb.bindPopup(popup_678afdf0e9bfb921df7780885435c952)
+        ;
+
+        
+    
+    
+            var marker_1901851796df2248474924414eb7b203 = L.marker(
+                [29.50166666666667, 77.12055555555555],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_d48f3694bec9ab180a3fac55a97bed06 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e91db4c910f25bf5d6b5d99898c40a4 = $(`<div id="html_7e91db4c910f25bf5d6b5d99898c40a4" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL TAJPUR </div>`)[0];
+                popup_d48f3694bec9ab180a3fac55a97bed06.setContent(html_7e91db4c910f25bf5d6b5d99898c40a4);
+            
+        
+
+        marker_1901851796df2248474924414eb7b203.bindPopup(popup_d48f3694bec9ab180a3fac55a97bed06)
+        ;
+
+        
+    
+    
+            var marker_8ca31342746529e6c3fd5bb2bc90e3e4 = L.marker(
+                [29.31722222222222, 77.07444444444444],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_e98f83bffcc7c364f22c13bf726c9090 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_74b8d32e6bb28baea66dc76c53321d65 = $(`<div id="html_74b8d32e6bb28baea66dc76c53321d65" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL BAPOLI FIELD </div>`)[0];
+                popup_e98f83bffcc7c364f22c13bf726c9090.setContent(html_74b8d32e6bb28baea66dc76c53321d65);
+            
+        
+
+        marker_8ca31342746529e6c3fd5bb2bc90e3e4.bindPopup(popup_e98f83bffcc7c364f22c13bf726c9090)
+        ;
+
+        
+    
+    
+            var marker_8e5dca1607d7d98f0f1fcddb5caaea62 = L.marker(
+                [29.265833333333333, 77.10249999999999],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_b4e0fc714559c0c4e1ba1aaa133e15a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b809daf1a7630b035e569f29c908d86 = $(`<div id="html_3b809daf1a7630b035e569f29c908d86" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL MATROLI FIELD </div>`)[0];
+                popup_b4e0fc714559c0c4e1ba1aaa133e15a0.setContent(html_3b809daf1a7630b035e569f29c908d86);
+            
+        
+
+        marker_8e5dca1607d7d98f0f1fcddb5caaea62.bindPopup(popup_b4e0fc714559c0c4e1ba1aaa133e15a0)
+        ;
+
+        
+    
+    
+            var marker_8f56cf9c04b13e00c43de05396af418c = L.marker(
+                [29.44611111111111, 77.18333333333334],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_6051583344c01393aeb36e39b567ed1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e6ab842a440446f10e33f6500b8f3c2 = $(`<div id="html_7e6ab842a440446f10e33f6500b8f3c2" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL MATROLI FIELD </div>`)[0];
+                popup_6051583344c01393aeb36e39b567ed1f.setContent(html_7e6ab842a440446f10e33f6500b8f3c2);
+            
+        
+
+        marker_8f56cf9c04b13e00c43de05396af418c.bindPopup(popup_6051583344c01393aeb36e39b567ed1f)
+        ;
+
+        
+    
+    
+            var marker_9399c64c42a85551b8e8bf4de0e638f9 = L.marker(
+                [29.572222222222223, 77.14916666666667],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_7effc645570a9e908d4e742c48ac89f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4092934a0857d884b55ac2d31478d2f9 = $(`<div id="html_4092934a0857d884b55ac2d31478d2f9" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> ANAJ MANDI GATE BAPOLI </div>`)[0];
+                popup_7effc645570a9e908d4e742c48ac89f4.setContent(html_4092934a0857d884b55ac2d31478d2f9);
+            
+        
+
+        marker_9399c64c42a85551b8e8bf4de0e638f9.bindPopup(popup_7effc645570a9e908d4e742c48ac89f4)
+        ;
+
+        
+    
+    
+            var marker_e683b6d7a0c2d50c9ef60f39bda426c3 = L.marker(
+                [29.283611111111117, 77.235],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_734a3b2f340ba49b628b42d1181c0d67 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf597269aa16bb8e2eaf0dab0a25ef6d = $(`<div id="html_bf597269aa16bb8e2eaf0dab0a25ef6d" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL BEHOLI FIELD </div>`)[0];
+                popup_734a3b2f340ba49b628b42d1181c0d67.setContent(html_bf597269aa16bb8e2eaf0dab0a25ef6d);
+            
+        
+
+        marker_e683b6d7a0c2d50c9ef60f39bda426c3.bindPopup(popup_734a3b2f340ba49b628b42d1181c0d67)
+        ;
+
+        
+    
+    
+            var marker_062419ac16049ac7dca3ed0a011d56ce = L.marker(
+                [29.572222222222223, 77.14472222222223],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_fa5f2ac80544ebf552757ea6dfcc43b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33b654bcaa30b32be6ee855dee89afdd = $(`<div id="html_33b654bcaa30b32be6ee855dee89afdd" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL BAPOLI FIELD </div>`)[0];
+                popup_fa5f2ac80544ebf552757ea6dfcc43b1.setContent(html_33b654bcaa30b32be6ee855dee89afdd);
+            
+        
+
+        marker_062419ac16049ac7dca3ed0a011d56ce.bindPopup(popup_fa5f2ac80544ebf552757ea6dfcc43b1)
+        ;
+
+        
+    
+    
+            var marker_da04593de258950dc493a62c77bc81d0 = L.marker(
+                [29.474166666666665, 77.0936111111111],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_2d9261402bf95cef6e0c10af80903f55 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e4733f768644fde5d9a401375441c840 = $(`<div id="html_e4733f768644fde5d9a401375441c840" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL SAHARMALPUR FIELD</div>`)[0];
+                popup_2d9261402bf95cef6e0c10af80903f55.setContent(html_e4733f768644fde5d9a401375441c840);
+            
+        
+
+        marker_da04593de258950dc493a62c77bc81d0.bindPopup(popup_2d9261402bf95cef6e0c10af80903f55)
+        ;
+
+        
+    
+    
+            var marker_a8ded90f51fbe26fabd2ad2193f2e518 = L.marker(
+                [29.52083333333333, 77.13555555555556],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_bb2004913ce36f32f659ee92d5238605 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f9310eb2703089d8dcb314448f6aa6a = $(`<div id="html_8f9310eb2703089d8dcb314448f6aa6a" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL GARHI NAWAB FIELD</div>`)[0];
+                popup_bb2004913ce36f32f659ee92d5238605.setContent(html_8f9310eb2703089d8dcb314448f6aa6a);
+            
+        
+
+        marker_a8ded90f51fbe26fabd2ad2193f2e518.bindPopup(popup_bb2004913ce36f32f659ee92d5238605)
+        ;
+
+        
+    
+    
+            var marker_7147bae8745a3573a2c369f98eca2512 = L.marker(
+                [29.51333333333333, 77.11972222222222],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_a57785ea7f0e437f0b3800adb998191e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18c9201ea14fed1709d6e9fc3ced37d2 = $(`<div id="html_18c9201ea14fed1709d6e9fc3ced37d2" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL GARHI BHALOR FIELD</div>`)[0];
+                popup_a57785ea7f0e437f0b3800adb998191e.setContent(html_18c9201ea14fed1709d6e9fc3ced37d2);
+            
+        
+
+        marker_7147bae8745a3573a2c369f98eca2512.bindPopup(popup_a57785ea7f0e437f0b3800adb998191e)
+        ;
+
+        
+    
+    
+            var marker_0a99e59065ec08d96add1e3b6fa60e37 = L.marker(
+                [29.534166666666664, 77.17611111111111],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_974d5eb4f89e18daff43cd24a17eab31 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d55a844c02a303b34375d4c23a8877b0 = $(`<div id="html_d55a844c02a303b34375d4c23a8877b0" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL BHALOR FIELD</div>`)[0];
+                popup_974d5eb4f89e18daff43cd24a17eab31.setContent(html_d55a844c02a303b34375d4c23a8877b0);
+            
+        
+
+        marker_0a99e59065ec08d96add1e3b6fa60e37.bindPopup(popup_974d5eb4f89e18daff43cd24a17eab31)
+        ;
+
+        
+    
+    
+            var marker_008c552d5f2fd391f6d9cf82686f2a98 = L.marker(
+                [29.49138888888889, 77.07972222222222],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_b524a6b22551f358a9e8f2357c0b3a82 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f5abbf68384d86a96b2747ff8d33a422 = $(`<div id="html_f5abbf68384d86a96b2747ff8d33a422" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> AT MIDNIGHT<br><b>Loc:</b> VILL BEHOLI FIELD </div>`)[0];
+                popup_b524a6b22551f358a9e8f2357c0b3a82.setContent(html_f5abbf68384d86a96b2747ff8d33a422);
+            
+        
+
+        marker_008c552d5f2fd391f6d9cf82686f2a98.bindPopup(popup_b524a6b22551f358a9e8f2357c0b3a82)
+        ;
+
+        
+    
+    
+            var marker_5180ada696af8df2c7a33a6e00ee922a = L.marker(
+                [29.471666666666668, 77.19833333333334],
+                {
+}
+            ).addTo(marker_cluster_d60ccc0c4154692c57282a35b167991d);
+        
+    
+        var popup_0fcab7b538904d1b28fdb941a1c76b7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2838dcd6b1ab12ba99a8b1ffdf038adc = $(`<div id="html_2838dcd6b1ab12ba99a8b1ffdf038adc" style="width: 100.0%; height: 100.0%;"><b>Head:</b> BURGLARY<br><b>Time:</b> 02.00 AM<br><b>Loc:</b> VILL RAIMAL FIELD </div>`)[0];
+                popup_0fcab7b538904d1b28fdb941a1c76b7f.setContent(html_2838dcd6b1ab12ba99a8b1ffdf038adc);
+            
+        
+
+        marker_5180ada696af8df2c7a33a6e00ee922a.bindPopup(popup_0fcab7b538904d1b28fdb941a1c76b7f)
+        ;
+
+        
+    
+    
+            marker_cluster_d60ccc0c4154692c57282a35b167991d.addTo(map_9bcf4f4165516ea8a4d9e48bebebad08);
+        
+</script>
+</html>
